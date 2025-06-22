@@ -7,23 +7,23 @@
 
 Banks marketing teams invest a large amount of money for acquiring new credit card customers by launching lots of campaigns and offers, so it's crucial to retain existing customers.
 
-Effective predictive ML models enables the business to pro-actively identify the risk of customer churn and provide any required offers to prevent customer churn.
+Effective predictive ML models enables the business to pro-actively identify the risk of customer attrition and provide any required offers to prevent customer attrition.
 
 ### 1.1 Business Problem Statement
 
 Identify the customers, who are likely to stop using credit card services
 - Understand driving factors of churn
-- Suggest strategic retention approaches to banks in order to prevent the churn
+- Suggest strategic retention approaches to banks in order to prevent the customer attrition
 
 ### 1.2 Objective
 
 The goal of this project is to develop predictive machine learning model to predict credit card customer churn
-- Identify the features which impact the customer churn 
-- Build predictive model to accurately classify the likely hood of churn or continuity of service
+- Identify the features which impacts the customer churn 
+- Build predictive model to accurately classify the likely hood of customer attrition
 
 ### 1.3 Expected Results
 - Analyze and identify patterns for churn driving factors
-- Compare the various model performances and achieve highly effective predictor model for credit card customer churn
+- Compare the various model performances and achieve highly accurate predictive model for credit card customer churn
 - The resulted model should serve the business to proactively identify and retain customers
 - Translate insights into actionable business recommendations
 
@@ -37,8 +37,6 @@ In order to achieve objective, I will follow below **CRISP-DM** framework steps.
 
 ## 2.	Model Outcomes or Predictions:
 ---------
-
-Identify the type of learning (classification or regression) and specify the expected output of your selected model. Determine whether supervised or unsupervised learning algorithms will be used.
 
 The goals of the prediction model are
 - To accurately predict whether a given customer will attrition or not
@@ -98,6 +96,8 @@ The goals of the prediction model are
 ### 3.4 Feature Correlations
 ![Feature Correlations](./images/feature_correlations.png)
 
+For more data insights, please refer [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb)
+
 
 ## 4.Data Preprocessing/Preparation:
 --------
@@ -116,7 +116,7 @@ Based on [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb), perfo
 
 ### 5.1 Model Selection Approach 
 
-#### 5.1.1 Considerable Classification Models For This Use Case
+#### 5.1.1 Considerable Classification Models
 
 | Classification Model | Reason for considering |
 |:---|:---:|
@@ -146,7 +146,7 @@ Based on above definitions, our clear goals for models selection criteria are
 For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling.ipynb)
 
 
-## 6.	Model Evaluation:
+## 6. Model Evaluation:
 -----
 
 As mentioned in above section, the model selection criteria is to select the model with high `recall`. Based on below classification models performance results, finalized LGBM model for Credit Card Customer Churn prediction use case
