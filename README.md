@@ -1,8 +1,9 @@
 # Capstone Project : Credit Card Customer Churn Prediction Final Report
 ------
 
+
 ## 1.	Problem Statement:
-------
+--------
 
 Banks marketing teams invest a large amount of money for acquiring new credit card customers by launching lots of campaigns and offers, so it's crucial to retain existing customers.
 
@@ -20,22 +21,22 @@ The goal of this project is to develop predictive machine learning model to pred
 - Identify the features which impact the customer churn 
 - Build predictive model to accurately classify the likely hood of churn or continuity of service
 
-**Expected Results**
+### 1.3 Expected Results
 - Analyze and identify patterns for churn driving factors
 - Compare the various model performances and achieve highly effective predictor model for credit card customer churn
 - The resulted model should serve the business to proactively identify and retain customers
 - Translate insights into actionable business recommendations
 
-## 2. Approach
+### 1.4 Approach
 
 In order to achieve objective, I will follow below **CRISP-DM** framework steps. 
 
-- For detailed EDA Analysis and Results, please refer [EDA notebook](creditcard-customer-churn-prediction-EDA.ipynb)
-- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](creditcard-customer-churn-prediction-modeling-v5.ipynb)
+- For detailed EDA Analysis and Results, please refer [EDA notebook](notebooks/creditcard-customer-churn-prediction-EDA.ipynb)
+- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
 
 ## 2.	Model Outcomes or Predictions:
------
+---------
 
 Identify the type of learning (classification or regression) and specify the expected output of your selected model. Determine whether supervised or unsupervised learning algorithms will be used.
 
@@ -49,7 +50,7 @@ The goals of the prediction model are
 
 
 ## 3.	Data Acquisition:
------
+---------
 
 - **Source :** Kaggle's credit card customers dataset [Kaggle data source](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers)
 - **Description :** This dataset consists of 10,000 customers mentioning their age, salary, marital_status, credit card limit, credit card category, etc. There are nearly 18 features.
@@ -87,20 +88,20 @@ The goals of the prediction model are
 
 
 ### 3.2 Numerical Feature Types Distributions
-![Numerical Feature Distributions](../images/numerical_feature_type_distributions.png)
+![Numerical Feature Distributions](images/numerical_feature_type_distributions.png)
 
 ### 3.3 Categorical Feature Types Distributions
-![Attrition by Income Category](../images/churn_by_Income_Category.png)
+![Attrition by Income Category](images/churn_by_Income_Category.png)
 
-![Attrition by Card Category](../images/churn_by_Card_Category.png)
+![Attrition by Card Category](images/churn_by_Card_Category.png)
 
-![Feature Correlations](../images/feature_correlations.png)
+![Feature Correlations](images/feature_correlations.png)
 
 
 ## 4.Data Preprocessing/Preparation:
-----
+--------
 
-Based on [EDA Analysis](creditcard-customer-churn-prediction-EDA.ipynb), performed below feature engineering steps
+Based on [EDA Analysis](notebooks/creditcard-customer-churn-prediction-EDA.ipynb), performed below feature engineering steps
 - Removed unnecessary columns
 - Stadardized feature names and categorical feature types
 - Encoding
@@ -109,8 +110,8 @@ Based on [EDA Analysis](creditcard-customer-churn-prediction-EDA.ipynb), perform
   - Ordinal Encoding (For ordinal categorical type features)
 - Splitting into training and testing sets
 
-## 5.	Prediction Modeling
------
+## 5.	Prediction Modeling:
+---------
 
 ### 5.2.1 Model Selection Approach 
 
@@ -141,11 +142,12 @@ Based on above definitions, our clear goals for models selection criteria are
 - Also provide business insights regarding why customers are churning, so that banks can plan for required steps
 
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
 
-## 6.	Model Evaluation
+## 6.	Model Evaluation:
 -----
+
 As mentioned in above section, the model selection criteria is to select the model with high `recall`. Based on below classification models performance results, finalized LGBM model for Credit Card Customer Churn prediction use case
 
 ### Model Evaluation Results
@@ -161,15 +163,16 @@ As mentioned in above section, the model selection criteria is to select the mod
 | Xgboost |	0.963968 |	0.963327 |	0.963968 |	0.963279 |	0.992495 |
 | Light GBM |	0.968904 |	0.968437 |	0.968904 |	0.968396 |	0.992699 |
 
-![Feature Correlations](../images/model_performance_comparison.png)
+![Feature Correlations](images/model_performance_comparison.png)
 
 ### LGBM Validation Confusion Matrix
 
-![Feature Correlations](../images/lgbm_confusion_matrix.png)
+![Feature Correlations](images/lgbm_confusion_matrix.png)
 
-## 7. Individual Feature Impact on Attrition
+## 7. Individual Feature Impact on Attrition:
+-----------------
 
-![Feature Correlations](../images/feature_impact_explanation_summary_plot.png)
+![Feature Correlations](images/feature_impact_explanation_summary_plot.png)
 
 ### Summary
 Below are the list of features by their churn prediction impact (By high influence to low influence)
@@ -182,9 +185,11 @@ Below are the list of features by their churn prediction impact (By high influen
 - **total_amt_chng_q4_q1:** Negatively impacted, the lower the value the higher chances to get churned 
 - Remaining all features don't have much impact on prediction
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
-## 8. Conclusion
+
+## 8. Conclusion:
+----------
 - LGBM is the selected model for Credit card churn prediction for business
 - Bank should engage with customers with less transaction count
  - Provide more cashback offers, so that customer will get more engaged and it reduces the chances of churn
