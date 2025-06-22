@@ -57,43 +57,18 @@ The goals of the prediction model are
 - **Quality of Data :** We have only 16.07% of customers who have churned. Thus, it's a bit difficult to train our model to predict churning customers
 - **Target/Dependent Variable :** Attrition_Flag (if the account is closed then 1 else 0)
 
-
-### 3.1 Input Dataset Definitions
-
-- **CLIENTNUM :** Client number. Unique identifier for the customer holding the account
-- **Attrition_Flag :** Internal event (customer activity) variable - if the account is closed then 1 else 0
-- **Customer_Age :** Demographic variable - Customer's Age in Years
-- **Gender :** Demographic variable - M=Male, F=Female
-- **Dependent_count :** Demographic variable - Number of dependents
-- **Education_Level :** Demographic variable - Educational Qualification of the account holder (example: high school, college graduate, etc.)
-- **Marital_Status :** Demographic variable - Married, Single, Divorced, Unknown
-- **Income_Category :** Demographic variable - Annual Income Category of the account holder (< $40K, $40K - 60K, $60K - $80K, $80K-$120K, > $120K, Unknown)
-- **Card_Category :** Product Variable - Type of Card (Blue, Silver, Gold, Platinum)
-- **Months_on_book :** Period of relationship with bank
-- **Total_Relationship_Count :** Total number of products held by the customer
-- **Months_Inactive_12_mon :** Number of months inactive in the last 12 months
-- **Contacts_Count_12_mon :** Number of Contacts between the customer and bank in the last 12 months
-- **Credit_Limit :** Credit Limit of the Credit Card
-- **Total_Revolving_Bal :** The balance that carries over from one month to the next is the revolving balance
-- **Avg_Open_To_Buy :** Open to Buy refers to the amount(avg in past 12 months) left on the credit card to use
-- **Total_Amt_Chng_Q4_Q1 :** Ratio of the total transaction amount in 4th quarter and the total transaction amount in 1st quarter
-- **Total_Trans_Amt :** Total Transaction Amount (Last 12 months)
-- **Total_Trans_Ct :** Total Transaction Count (Last 12 months)
-- **Total_Ct_Chng_Q4_Q1 :** Ratio of the total transaction count in 4th quarter and the total transaction count in 1st quarter
-- **Avg_Utilization_Ratio :** Represents how much of the available credit the customer spent
-
 [Reference](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers/data) 
 
 
-### 3.2 Numerical Feature Types Distributions
+### 3.1 Numerical Feature Types Distributions
 ![Numerical Feature Distributions](./images/numerical_feature_type_distributions.png)
 
-### 3.3 Categorical Feature Types Distributions
+### 3.2 Categorical Feature Types Distributions
 ![Attrition by Income Category](./images/churn_by_Income_Category.png)
 
 ![Attrition by Card Category](./images/churn_by_Card_Category.png)
 
-### 3.4 Feature Correlations
+### 3.3 Feature Correlations
 ![Feature Correlations](./images/feature_correlations.png)
 
 For more data insights, please refer [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb)
