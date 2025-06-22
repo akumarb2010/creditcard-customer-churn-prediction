@@ -31,8 +31,8 @@ The goal of this project is to develop predictive machine learning model to pred
 
 In order to achieve objective, I will follow below **CRISP-DM** framework steps. 
 
-- For detailed EDA Analysis and Results, please refer [EDA notebook](notebooks/creditcard-customer-churn-prediction-EDA.ipynb)
-- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+- For detailed EDA Analysis and Results, please refer [EDA notebook](./notebooks/creditcard-customer-churn-prediction-EDA.ipynb)
+- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
 
 ## 2.	Model Outcomes or Predictions:
@@ -88,20 +88,21 @@ The goals of the prediction model are
 
 
 ### 3.2 Numerical Feature Types Distributions
-![Numerical Feature Distributions](images/numerical_feature_type_distributions.png)
+![Numerical Feature Distributions](./images/numerical_feature_type_distributions.png)
 
 ### 3.3 Categorical Feature Types Distributions
-![Attrition by Income Category](images/churn_by_Income_Category.png)
+![Attrition by Income Category](./images/churn_by_Income_Category.png)
 
-![Attrition by Card Category](images/churn_by_Card_Category.png)
+![Attrition by Card Category](./images/churn_by_Card_Category.png)
 
-![Feature Correlations](images/feature_correlations.png)
+### 3.4 Feature Correlations
+![Feature Correlations](./images/feature_correlations.png)
 
 
 ## 4.Data Preprocessing/Preparation:
 --------
 
-Based on [EDA Analysis](notebooks/creditcard-customer-churn-prediction-EDA.ipynb), performed below feature engineering steps
+Based on [EDA Analysis](./notebooks/./creditcard-customer-churn-prediction-EDA.ipynb), performed below feature engineering steps
 - Removed unnecessary columns
 - Stadardized feature names and categorical feature types
 - Encoding
@@ -113,9 +114,9 @@ Based on [EDA Analysis](notebooks/creditcard-customer-churn-prediction-EDA.ipynb
 ## 5.	Prediction Modeling:
 ---------
 
-### 5.2.1 Model Selection Approach 
+### 5.1 Model Selection Approach 
 
-##### **Considerable Classification Models For This Use Case** 
+#### 5.1.1 Considerable Classification Models For This Use Case
 
 | Classification Model | Reason for considering |
 |:---|:---:|
@@ -124,7 +125,7 @@ Based on [EDA Analysis](notebooks/creditcard-customer-churn-prediction-EDA.ipynb
 | Random Forest | Reduces the overfitting and improves the accuracy by combining the multiple decision trees|
 | Ensemble Methods <ul><li>AdaBoost</li><li>GBM</li><li>XGBoost</li><li>LightGBM</li></ul> | Achieves High Accuracy | 
 
-##### **Model Evaluations Measures**
+#### 5.1.2 Model Evaluations Measures
 
 | Evaluation Metric | Definition |
 |:---|:---:|
@@ -134,7 +135,7 @@ Based on [EDA Analysis](notebooks/creditcard-customer-churn-prediction-EDA.ipynb
 | F1-Score | The harmonic mean of precision and recall, provides a balanced measure for performance | 
 | ROC-AUC | A measure of the model's ability to distinguish between customers across different probability thresholds | 
 
-##### **Aligning With Business Requirements**
+#### 5.1.3 Aligning With Business Requirements**
 Based on above definitions, our clear goals for models selection criteria are
 - **Reduce** False Negatives, which selecting the model with high **recall** 
 - Select the best performing model, so that bank can take required marketing steps to prevent potential customer churn prevention
@@ -142,7 +143,7 @@ Based on above definitions, our clear goals for models selection criteria are
 - Also provide business insights regarding why customers are churning, so that banks can plan for required steps
 
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
 
 ## 6.	Model Evaluation:
@@ -150,7 +151,7 @@ For more details regarding model tuning and evaluations, please refer [modeling 
 
 As mentioned in above section, the model selection criteria is to select the model with high `recall`. Based on below classification models performance results, finalized LGBM model for Credit Card Customer Churn prediction use case
 
-### Model Evaluation Results
+### 6.1 Model Evaluation Results
 
 
 | Model | accuracy |	precision |	recall	 | f1_score |	roc_auc_score |
@@ -163,18 +164,19 @@ As mentioned in above section, the model selection criteria is to select the mod
 | Xgboost |	0.963968 |	0.963327 |	0.963968 |	0.963279 |	0.992495 |
 | Light GBM |	0.968904 |	0.968437 |	0.968904 |	0.968396 |	0.992699 |
 
-![Feature Correlations](images/model_performance_comparison.png)
+![Feature Correlations](./images/model_performance_comparison.png)
 
-### LGBM Validation Confusion Matrix
+### 6.2 LGBM Validation Confusion Matrix
 
-![Feature Correlations](images/lgbm_confusion_matrix.png)
+![Feature Correlations](./images/lgbm_confusion_matrix.png)
+
 
 ## 7. Individual Feature Impact on Attrition:
 -----------------
 
-![Feature Correlations](images/feature_impact_explanation_summary_plot.png)
+![Feature Correlations](./images/feature_impact_explanation_summary_plot.png)
 
-### Summary
+### 7.1 Summary
 Below are the list of features by their churn prediction impact (By high influence to low influence)
 - **total_trans_ct:** Negatively impacted, the lower the value the higher chances to get churned 
 - **total_trans_amt:** Negatively impacted, the lower the value the higher chances to get churned 
@@ -185,7 +187,7 @@ Below are the list of features by their churn prediction impact (By high influen
 - **total_amt_chng_q4_q1:** Negatively impacted, the lower the value the higher chances to get churned 
 - Remaining all features don't have much impact on prediction
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
 
 
 ## 8. Conclusion:
