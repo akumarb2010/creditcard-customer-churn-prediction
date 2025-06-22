@@ -31,8 +31,8 @@ The goal of this project is to develop predictive machine learning model to pred
 
 In order to achieve objective, I will follow below **CRISP-DM** framework steps. 
 
-- For detailed EDA Analysis and Results, please refer [EDA notebook](./notebooks/creditcard-customer-churn-prediction-EDA.ipynb)
-- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+- For detailed EDA Analysis and Results, please refer [EDA notebook](./notebooks/EDA-creditcard-customer-data.ipynb)
+- For feature engineering/model training/model tuning/model evalution results, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling.ipynb)
 
 
 ## 2.	Model Outcomes or Predictions:
@@ -102,7 +102,7 @@ The goals of the prediction model are
 ## 4.Data Preprocessing/Preparation:
 --------
 
-Based on [EDA Analysis](./notebooks/./creditcard-customer-churn-prediction-EDA.ipynb), performed below feature engineering steps
+Based on [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb), performed below feature engineering steps
 - Removed unnecessary columns
 - Stadardized feature names and categorical feature types
 - Encoding
@@ -143,7 +143,7 @@ Based on above definitions, our clear goals for models selection criteria are
 - Also provide business insights regarding why customers are churning, so that banks can plan for required steps
 
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling.ipynb)
 
 
 ## 6.	Model Evaluation:
@@ -187,7 +187,7 @@ Below are the list of features by their churn prediction impact (By high influen
 - **total_amt_chng_q4_q1:** Negatively impacted, the lower the value the higher chances to get churned 
 - Remaining all features don't have much impact on prediction
 
-For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling-v5.ipynb)
+For more details regarding model tuning and evaluations, please refer [modeling notebook](./notebooks/creditcard-customer-churn-prediction-modeling.ipynb)
 
 
 ## 8. Conclusion:
