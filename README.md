@@ -146,6 +146,11 @@ As mentioned in above section, the model selection criteria is to, select the mo
 
 ![Feature Correlations](./images/lgbm_confusion_matrix.png)
 
+### 6.3 Summary
+- Based on the above results, as LGBM is outperforming across other classification models, so finalizing this model for credit card churn prediction
+- Just to note `RandomizedSearchCV` and `Bayesian optimization` hyperparameter tuning,test/validation scores improved for both LGBM and XGB models
+  - Also we can observe that for Xgboost, the overfitting issue got resolved
+
 
 ## 7. Individual Feature Impact on Attrition:
 -----------------
