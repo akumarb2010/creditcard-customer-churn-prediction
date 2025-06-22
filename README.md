@@ -40,9 +40,9 @@ In order to achieve objective, I will follow below **CRISP-DM** framework steps.
 
 The goals of the prediction model are
 - To accurately predict whether a given customer will attrition or not
-- **False Negatives:** Model predicts the customer will not churn, but actually the customer attrition
+- **False Negatives:** Model predicts the customer will not attrition, but actually the customer attrition
     - These increases the missed opportunities for banks and has direct impact on revenue loss prevention
-- **False Positives:** Model predicts the customer will churn, but actually the customer will **not** attrition
+- **False Positives:** Model predicts the customer will attrition, but actually the customer will **not** attrition
     - These incurs un necessary operational overhead
  
 
@@ -51,25 +51,75 @@ The goals of the prediction model are
 ---------
 
 - **Source :** Kaggle's credit card customers dataset [Kaggle data source](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers)
-- **Description :** This dataset consists of 10,000 customers mentioning their age, salary, marital_status, credit card limit, credit card category, etc. There are nearly 18 features.
+- **Description :** This dataset consists of 10,000 customers mentioning their `age, salary, marital_status, credit card limit, credit card category` etc. There are nearly 18 features.
 - **Rows :** 10K credit card customers data
 - **Columns :** 23 features
-- **Quality of Data :** We have only 16.07% of customers who have churned. Thus, it's a bit difficult to train our model to predict churning customers
+- **Quality of Data :** We have only 16% of customers who have attritioned. Thus, it's a bit difficult to train our model to predict churning customers
 - **Target/Dependent Variable :** Attrition_Flag (if the account is closed then 1 else 0)
 
 [Reference](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers/data) 
 
+### 3.1 Hight Level Data Insights
 
-### 3.1 Numerical Feature Types Distributions
+#### 3.1.1 Attrition Percentage
+![Numerical Feature Distributions](./images/churn_percentage.png)
+
+Note
+- High Imbalance in input data, since the existing vs. attrited customers ratio is 84:16
+
+#### 3.1.2 Numerical Feature Types Distributions
 ![Numerical Feature Distributions](./images/numerical_feature_type_distributions.png)
 
-### 3.2 Categorical Feature Types Distributions
+#####  Observations From Numerical Features 
+
+- `months_on_book` most of the customers are 36 months in relation with bank
+-  Most of the customers are using more than 3 services of the bank/credit card
+-  There are customers inactive for more than 5 months, they might lead to churn
+-  median credit limit is 5K, but there are outliers at higher end
+  - As we can observe, Most of the higher credit limit customers have salary > 60K
+  - And most of these high credit limit customers have either silver or blue card types
+-  `total_revolving_bal` is interesting
+  - There are users, who doesn't use the credit card as their revolving balance is 0
+  - most of the churned customers have less revolving balance
+- `Average Open to Buy` has lots of higher end outliers, which means there are customers who uses only very small amount of their credit limit
+- `Utilization ratio` is right skewed
+
+
+#### 3.1.3 Categorical Feature Types Distributions
 ![Attrition by Income Category](./images/churn_by_Income_Category.png)
 
 ![Attrition by Card Category](./images/churn_by_Card_Category.png)
 
-### 3.3 Feature Correlations
+#####  Observations From Categorical Features 
+- Gender: Data is almost equally distributed between Males and Females
+  - So Attrition is not depends on customer gender
+- Education Level:
+  - 31% customers are Graduate
+  - Attrition also not depends on Education level
+- Marital Status:
+   - ~85% customers are either Single or Married, where 46.7% of the customers are Married
+   - At high level attrition also not depends on Marital status
+- Income Level:
+   - Interestingly higher income customers has slightly higher attrition rate
+   - 35% customers earn less than $40k and 36% earns $60k or more
+- Card Type:
+    - ~93% customers have Blue card
+    - Platinum customers has higher attrition rate followed by gold
+
+#### 3.1.4 Feature Correlations
 ![Feature Correlations](./images/feature_correlations.png)
+
+##### Correlation Observations
+- Credit card limit and Average Open to Buy have 100% correlation
+- Months on book and Customer Age have quite strong correlation
+- Average Utilization Ration and Total Revolving Balance are also a bit correlated it appears
+- Customer Churn appears to be uncorrelated with Customer Age, Dependent Count, Months on Book, Open to Buy, Credit Limit, we'll remove these from dataset
+
+#### Patterns Of Churned Customers
+- Lower `total transaction amount` and `transaction count`
+- Lower `resolving balance`
+- Lower `transaction count change Q4 to Q1`
+- Higher number of times contacted by the bank
 
 For more data insights, please refer [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb)
 
