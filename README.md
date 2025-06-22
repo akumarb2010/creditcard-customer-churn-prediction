@@ -40,9 +40,9 @@ In order to achieve objective, I will follow below **CRISP-DM** framework steps.
 
 The goals of the prediction model are
 - To accurately predict whether a given customer will attrition or not
-- **False Negatives:** Model predicts the customer will not churn, but actually the customer churns
-    - These increases the missed opportunities for banks has direct impact on revenue loss prevention
-- **False Positives:** Model predicts the customer will churn, but actually the customer will not churn
+- **False Negatives:** Model predicts the customer will not churn, but actually the customer attrition
+    - These increases the missed opportunities for banks and has direct impact on revenue loss prevention
+- **False Positives:** Model predicts the customer will churn, but actually the customer will **not** attrition
     - These incurs un necessary operational overhead
  
 
@@ -99,7 +99,7 @@ The goals of the prediction model are
 For more data insights, please refer [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb)
 
 
-## 4.Data Preprocessing/Preparation:
+## 4.Data Preprocessing:
 --------
 
 Based on [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb), performed below feature engineering steps
@@ -135,11 +135,12 @@ Based on [EDA Analysis](./notebooks/./EDA-creditcard-customer-data.ipynb), perfo
 | F1-Score | The harmonic mean of precision and recall, provides a balanced measure for performance | 
 | ROC-AUC | A measure of the model's ability to distinguish between customers across different probability thresholds | 
 
-#### 5.1.3 Aligning With Business Requirements**
+#### 5.1.3 Aligning With Business Requirements
+
 Based on above definitions, our clear goals for models selection criteria are
-- **Reduce** False Negatives, which selecting the model with high **recall** 
-- Select the best performing model, so that bank can take required marketing steps to prevent potential customer churn prevention
-  - So focus on model performance and hyper parameter tuning
+- **Reduce** False Negatives, which implies selecting the model with high **recall** 
+- Select the best performing model, so that bank can take required marketing steps to prevent potential customer churn
+  - So focus on model performance/hyper parameter tuning
 - Also provide business insights regarding why customers are churning, so that banks can plan for required steps
 
 
@@ -147,9 +148,9 @@ For more details regarding model tuning and evaluations, please refer [modeling 
 
 
 ## 6. Model Evaluation:
------
+-------
 
-As mentioned in above section, the model selection criteria is to select the model with high `recall`. Based on below classification models performance results, finalized LGBM model for Credit Card Customer Churn prediction use case
+As mentioned in above section, the model selection criteria is to, select the model with high `recall`. Based on below classification models performance results, finalized LGBM model for Credit Card Customer Churn prediction use case
 
 ### 6.1 Model Evaluation Results
 
